@@ -1,0 +1,42 @@
+// 核心配色 (Core Colors)
+$primaryColor: #2F54EB;
+$successColor: #52C41A;
+$warningColor: #FAAD14;
+$errorColor: #F5222D;
+
+// 中性色 (Neutral Colors)
+$titleColor: #262626;
+$textColor: #595959;
+$subTextColor: #8C8C8C;
+$borderColor: #D9D9D9;
+$bgColor: #F5F5F5;
+
+// 侧边栏 (Sidebar Colors)
+$menuText: rgba(255, 255, 255, 0.65);
+$menuActiveText: #FFFFFF;
+$subMenuActiveText: #FFFFFF;
+
+$menuBg: #001529;
+$menuHover: #1890FF;
+
+$subMenuBg: #000c17;
+$subMenuHover: #1890FF;
+
+// 布局 (Layout)
+$sideBarWidth: 210px;
+
+// 导出变量给 JS 使用
+:export {
+  primaryColor: $primaryColor;
+  successColor: $successColor;
+  warningColor: $warningColor;
+  errorColor: $errorColor;
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+  subMenuActiveText: $subMenuActiveText;
+  menuBg: $menuBg;
+  menuHover: $menuHover;
+  subMenuBg: $subMenuBg;
+  subMenuHover: $subMenuHover;
+  sideBarWidth: $sideBarWidth;
+}

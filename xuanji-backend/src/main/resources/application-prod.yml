@@ -1,0 +1,52 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /xuanji-backend
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.2.14.17:6446/xj_dev_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: xj_admin
+    password: 123456Qq!
+    hikari:
+      maximum-pool-size: 50
+      minimum-idle: 10
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+    password: ${REDIS_PASSWORD:}
+    database: 0
+    timeout: 3000ms
+    lettuce:
+      pool:
+        max-active: 20
+        max-wait: -1ms
+        max-idle: 10
+        min-idle: 5
+
+jwt:
+  secret: ${JWT_SECRET:xuanji-prod-secret-key-1234567890123456}
+  expiration: ${JWT_EXPIRATION:7200000}
+
+logging:
+  level:
+    com.xuanji: warn
+    org.springframework: warn
+  file:
+    name: /opt/xuanji/logs/xuanji-prod.log
+  pattern:
+    file: '%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n'
+  logback:
+    rollingpolicy:
+      max-file-size: 100MB
+      max-history: 30
+      total-size-cap: 10GB
